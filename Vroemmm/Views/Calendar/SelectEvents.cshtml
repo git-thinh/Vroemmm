@@ -1,0 +1,17 @@
+﻿@model Vroemmm.Models.SelectEventsModel
+
+@{
+    ViewBag.Title = "Selecteer de maand waarvan je de reiskosten wilt bereken";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@for (int i = 0; i < 12; i++)
+{
+    var date = DateTime.Now.AddMonths(-i);
+    <div>
+        @Html.ActionLink(date.ToString("MMMM"), "Index", "Travel", new {calendarId = Model.CalendarId, year = date.Year, month = date.Month }, null)
+    </div>
+}
+
+

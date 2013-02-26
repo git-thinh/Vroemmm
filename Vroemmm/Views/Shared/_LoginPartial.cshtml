@@ -1,0 +1,9 @@
+﻿<ul class="nav pull-right">
+    @if (Request.IsAuthenticated) {
+        <li>@Html.ActionLink(User.Identity.Name, MVC.Account.Manage())</li>
+        <li>@Html.ActionLink("Uitloggen", MVC.Account.LogOff())</li>
+    } else {
+        <li>@Html.ActionLink("Registreren", MVC.Account.Register())</li>
+        <li>@Html.ActionLink("Inloggen", MVC.Account.Login())</li>
+    }
+</ul>

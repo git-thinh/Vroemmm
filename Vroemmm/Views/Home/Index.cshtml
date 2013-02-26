@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Vroemmm, voor je reiskostenoverzicht!";
+}
+
+<h1>@ViewBag.Title</h1>
+<div>
+    Genereer automatisch je reiskostenoverzicht. Vroemmm leest je google agenda uit en berekent met google maps de afstanden. Handig!
+</div>
+
+@if(Request.IsAuthenticated)
+{
+    @Html.ActionLink("Bereken mijn reiskosten",  MVC.Calendar.SelectCalendar(), new { @class="btn"})
+}
+else
+{
+    @Html.Partial(MVC.Account.Views._ExternalLoginPartial)   
+}

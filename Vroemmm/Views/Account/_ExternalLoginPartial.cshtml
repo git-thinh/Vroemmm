@@ -1,0 +1,5 @@
+﻿@using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    <button class ="btn" name="provider" title="Inloggen met je google account" type="submit" value="google">Inloggen met Google</button>
+}

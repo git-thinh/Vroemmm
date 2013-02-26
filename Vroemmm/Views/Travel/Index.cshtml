@@ -1,0 +1,72 @@
+﻿@model Vroemmm.Models.TravelCostsModel
+
+@{
+    ViewBag.Title = "Overzicht reiskosten";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if(Model.Routes.Any())
+{
+    <table class="table table-striped">
+        <tr>            
+            <th>
+                @Html.DisplayNameFor(model => model.Routes.First().Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes.First().Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes.First().Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes.First().Return)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routes.First().Distance)
+            </th>
+        </tr>
+
+        @foreach (var route in Model.Routes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => route.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => route.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => route.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => route.Return)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => route.Distance)
+                </td>
+            </tr>
+        }
+
+    </table> 
+    
+    <table>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.TotalDistance)</td>
+            <td>@Html.DisplayFor(m => m.TotalDistance)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.CostsPerKilometer)</td>
+            <td>@Html.DisplayFor(m => m.CostsPerKilometer)</td>
+        </tr>        
+        <tr>
+            <td>@Html.DisplayNameFor(m => m.TotalCosts)</td>
+            <td>@Html.DisplayFor(m => m.TotalCosts)</td>
+        </tr>
+    </table>
+
+}
+else
+{
+    <div>Deze maand niet gereisd?</div>
+}
