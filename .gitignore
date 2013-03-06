@@ -165,3 +165,5 @@ pip-log.txt
 .DS_Store
 /Vroemmm/*.config
 /Vroemmm/*.config
+/Vroemmm/Web.Release.config
+/Vroemmm/Web.Release.config
