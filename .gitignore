@@ -167,3 +167,5 @@ pip-log.txt
 /Vroemmm/*.config
 /Vroemmm/Web.Release.config
 /Vroemmm/Web.Release.config
+
+/Vroemmm/Web.Release.config
