@@ -22,7 +22,7 @@ namespace Vroemmm.GoogleAuth
                 throw new NoAuthenticatorException();
             }
             
-            calenderService = Utils.BuildService((IAuthenticator)authenticator);
+            calenderService = new CalendarService((IAuthenticator)authenticator);
 
             controller.Session["calenderService"] = calenderService;
 

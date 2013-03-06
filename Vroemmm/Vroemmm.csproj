@@ -218,6 +218,12 @@
     <Compile Include="Controllers\BootstrapBaseController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\GoogleAuthenticationController.cs" />
+    <Compile Include="GoogleAuth\Exceptions\CodeExchangeException.cs" />
+    <Compile Include="GoogleAuth\Exceptions\GetCredentialsException.cs" />
+    <Compile Include="GoogleAuth\Exceptions\NoAuthenticatorException.cs" />
+    <Compile Include="GoogleAuth\Exceptions\NoRefreshTokenException.cs" />
+    <Compile Include="GoogleAuth\Exceptions\NoUserIdException.cs" />
+    <Compile Include="GoogleAuth\StoredStateClient.cs" />
     <Compile Include="Logic\LocationOptimizer.cs" />
     <Compile Include="GoogleAuthenticationController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -233,10 +239,10 @@
     <Compile Include="Models\TravelCostsModel.cs" />
     <Compile Include="Models\SelectEventsModel.cs" />
     <Compile Include="Controllers\TravelController.cs" />
-    <Compile Include="Google authentication\AgendaServiceProvider.cs" />
-    <Compile Include="Google authentication\ClientCredentials.cs" />
-    <Compile Include="Google authentication\StoredCredentials.cs" />
-    <Compile Include="Google authentication\Utils.cs" />
+    <Compile Include="GoogleAuth\AgendaServiceProvider.cs" />
+    <Compile Include="GoogleAuth\ClientCredentials.cs" />
+    <Compile Include="GoogleAuth\StoredCredentials.cs" />
+    <Compile Include="GoogleAuth\Utils.cs" />
     <Compile Include="GoogleApiHelpers\GoogleMapsDistanceCalculator.cs" />
     <Compile Include="GoogleApiHelpers\GeoCodeProvider.cs" />
     <Compile Include="Logic\IDistanceCalculator.cs" />
@@ -364,9 +370,6 @@
     <Content Include="T4MVC.tt.settings.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
